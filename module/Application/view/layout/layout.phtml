@@ -1,0 +1,110 @@
+<?php
+echo $this->doctype();
+$this->mainMenu()->setItems([
+    [
+        'id' => 'catalogo',
+        'label' => 'CATÁLOGO',
+        'dropdown' => [
+            [
+                'id' => 'restaurantes',
+                'label' => 'RESTAURANTES',
+                'link' => $this->url('home')
+            ],
+            [
+                'id' => 'auditorios',
+                'label' => 'AUDITORIOS',
+                'link' => $this->url('home')
+            ],
+            [
+                'id' => 'educativos',
+                'label' => 'U. EDUCATIVAS',
+                'link' => $this->url('home')
+            ],
+            [
+                'id' => 'hoteles',
+                'label' => 'HOTELES',
+                'link' => $this->url('home')
+            ]
+        ]
+    ],
+    [
+        'id' => 'nosotros',
+        'label' => 'NOSOTROS',
+        'link' => $this->url('nosotros')
+    ],
+    [
+        'id' => 'contact',
+        'label' => 'CONTACTANOS',
+        'link' => $this->url('contacto')
+    ],
+//     [
+//         'id' => 'instagram',
+//         'label' => '',
+//         'link' => $this->url('home'),
+//         'img' => '/img/inico.png'
+//     ],
+//     [
+//         'id' => 'facebook',
+//         'label' => '',
+//         'link' => $this->url('home'),
+//         'img' => '/img/fbico.png',
+//         'last' => true,
+//     ],
+]);
+?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?= $this->headTitle("D'Metal Muebles ")->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?= $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
+            ->prependStylesheet($this->basePath('css/style.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+        ?>
+
+        <!-- Scripts -->
+        <?= $this->headScript()
+            ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery-3.1.0.min.js'))
+        ?>
+    </head>
+    <body>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="<?= $this->url('home')?>">
+                        <img alt="Brand" src="/img/logo2.png">
+                    </a>
+                </div>
+                <!-- Navigation bar -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <?= $this->mainMenu()->render(); ?>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid container-no-padding">
+            <?= $this->content ?>
+	    </div>
+        <footer>
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <img alt="Brand" src="/img/logo_footer.png">
+                    </a>
+                </div>
+                <div class="footer-menu">
+                    <?= $this->mainMenu()->render(); ?>
+                </div>
+                <p>&copy; <?= date('Y') ?> Inanbesa Cia. Ltda. todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </body>
+</html>

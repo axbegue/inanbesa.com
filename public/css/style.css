@@ -1,0 +1,261 @@
+.navbar-brand {
+    padding: 0px 0px;
+}
+
+.navbar-default {
+    border-radius: 0;
+}
+
+.navbar {
+    min-height: 75px;
+    margin-bottom: 0;
+}
+
+.navbar-brand {
+    min-height: 73px;
+}
+
+.navbar-brand img {
+    position: relative;
+    z-index: 1000;
+}
+
+/*.navbar-collapse {
+    min-height: 73px;
+}*/
+
+.navbar-default .navbar-collapse > ul {
+    margin-top: 10px;
+}
+
+.container-no-padding {
+    padding: 0px 0px;
+}
+
+.navbar-nav > li > a.image {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.navbar-default .navbar-collapse .navbar-nav > li > a {
+    margin-left: 0px;
+    margin-right: 10px;
+}
+
+.navbar-default .navbar-collapse .navbar-nav > li > a.last {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    /*padding-top: 41px;
+    padding-bottom: 41px;*/
+}
+
+/*.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .active > a {
+    background-image: none;
+    background-repeat: no-repeat;
+    box-shadow: inherit;
+}*/
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    background-image: none;
+    background-repeat: no-repeat;
+    box-shadow: inherit;
+    background-color: inherit;
+    color: #6c717e;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #939aab;
+}
+
+
+
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right,
+.carousel-control .icon-prev,
+.carousel-control .icon-next {
+    font-size: 60px;
+    height: 60px;
+    width: 60px;
+    margin-top: -20px;
+}
+
+.carousel-caption {
+    left: 20%;
+    padding-bottom: 30px;
+    right: 20%;
+}
+
+.carousel-caption {
+    top: 25%;
+    bottom: auto;
+    color: #fff;
+    left: 15%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    position: absolute;
+    right: 15%;
+    text-align: center;
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 1);
+    z-index: 10;
+}
+
+.carousel-caption > .titulo,
+.carousel-caption > .subtitulo {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.carousel-caption > .subtitulo {
+    color: white;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+.carousel-caption > .vinculo {
+    border: 2px solid #fff;
+    font-size: 20px;
+    /*font-weight: 50px;*/
+    color: #fff;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+footer {
+    background-color: #252f49;
+    color: #939aab;
+    height: 156px;
+}
+
+footer a {
+    color: #939aab;
+}
+
+footer p {
+    text-align: right;
+}
+
+footer a.navbar-brand {
+    height: auto;
+}
+
+footer .container div.footer-menu {
+    height: 50px;
+}
+
+footer .navbar-right {
+    margin-right: 0;
+}
+
+footer .container {
+    padding-top: 30px;
+}
+
+
+
+
+
+
+
+
+.contenido {
+    padding-top: 95px;
+    padding-bottom: 85px;
+}
+
+.content-centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contenido-titulo {
+    text-align: center;
+    font-family: serif;
+    margin-bottom: 0;
+}
+
+
+.contenido-subtitulo {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.contacto-titulo-datos {
+    font-size: 20px;
+}
+
+
+
+
+.categoria-wrap {
+    height: 250px;
+    padding-left: 0;
+    padding-right: 0;
+    background-image: linear-gradient(to bottom, #e4e4e4, #f1f1f1 70%, #e1e1e1);
+    background-color: #e6e6e6;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.categoria-content {
+    width: 60%;
+    margin-top: 17px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imagenes-categorias {
+    padding-bottom: 24px;
+    padding-right: 13px;
+}
+
+.categoria-wrap .col-md-3 {
+    padding-left: 22;
+    padding-right: 22;
+    /*background-color: #faee33;*/
+}
+
+
+.categoria-wrap .link-wrap {
+    text-align: center;
+    height: 32px;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+
+.categoria-wrap .categoria-link {
+    cursor: pointer;
+    border: 2px solid #1e2433;
+    padding: 15px 75px 12px 67px;
+    color: #1e2433;
+}
+
+.categoria-wrap a.categoria-link:hover,
+.categoria-wrap a.categoria-link:focus {
+    text-decoration: none;
+    background-color: #1e2433;
+    color: #ececec;
+}
+
+
+
+

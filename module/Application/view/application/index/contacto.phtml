@@ -1,0 +1,135 @@
+<?php
+
+$this->headTitle('Contactanos');
+
+$this->mainMenu()->setActiveItemId('contacto');
+
+// $this->pageBreadcrumbs()->setItems(array(
+//             'Home'=>$this->url('home'),
+//             'Contact Us'=>$this->url('contacto')
+//             ));
+
+$form = $this->form;
+$form->setAttribute('action', $this->url('contacto'));
+$form->get('name')->setAttributes(array(
+    'class'=>'form-control',
+    'placeholder'=>'Ingrese su nombre y apellido aqui'
+));
+$form->get('email')->setAttributes(array(
+    'class'=>'form-control', 
+    'placeholder'=>'nombre@ejemplo.com'
+    ));
+$form->get('subject')->setAttributes(array(
+    'class'=>'form-control', 
+    'placeholder'=>'Ingrese tema aqui'
+    ));
+$form->get('phone')->setAttributes(array(
+    'class'=>'form-control', 
+    'placeholder'=>'1 (234) 567-8901'
+    ));
+$form->get('body')->setAttributes(array(
+    'class'=>'form-control', 
+    'rows'=>6, 
+    'placeholder'=>'Ingrese mensaje de texto aqui'
+    ));
+$form->get('submit')->setAttributes(array('class'=>'btn btn-primary'));
+$form->prepare();
+
+?>
+<img class="img-responsive center-block" alt="" src="/img/contactos.png">
+
+<div class="row">
+    <div class="col-md-3 center-block"></div>
+    <div class="col-md-6 center-block">
+        <br />
+        <br />
+        <h1 class="contenido-titulo">Dirección y</h1>
+        <h1 class="contenido-subtitulo">Contacto</h1>
+        <img width="39" height="9" class="img-responsive center-block" alt="" src="/img/fabricante5.jpg">
+        <br />
+        <hr>
+        <br />
+        <br />
+<!--         <p> -->
+<!--             Please fill out the following form to contact us.  -->
+<!--             We appreciate your feedback.  -->
+<!--         </p> -->
+        
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="contacto-titulo-datos">Dirección:</h2>
+                <p>Km. 6.5 Vía Daule, Centro Yuliana Local 127</p>
+                <p>Guayaquil - Ecuador</p>
+                <hr>
+                <h2 class="contacto-titulo-datos">Teléfono:</h2>
+                <p>2254308 / 2257555 / 2261393</p>
+                <hr>
+            </div>
+            <div class="col-md-6">
+                <?php echo $this->form()->openTag($form); ?>
+                
+                <div class="form-group">
+                    <?php echo $this->formLabel($form->get('name')); ?>
+                    <?php echo $this->formElement($form->get('name')); ?>
+                    <?php echo $this->formElementErrors($form->get('name')); ?>                  
+                </div>
+                
+                <div class="form-group">
+                    <?php echo $this->formLabel($form->get('email')); ?>
+                    <?php echo $this->formElement($form->get('email')); ?>
+                    <?php echo $this->formElementErrors($form->get('email')); ?>                  
+                </div>
+                
+                <div class="form-group">
+                    <?php echo $this->formLabel($form->get('subject')); ?>
+                    <?php echo $this->formElement($form->get('subject')); ?>
+                    <?php echo $this->formElementErrors($form->get('subject')); ?>                  
+                </div>
+                
+                <div class="form-group">
+                    <?php echo $this->formLabel($form->get('body')); ?>
+                    <?php echo $this->formElement($form->get('body')); ?>
+                    <?php echo $this->formElementErrors($form->get('body')); ?>                  
+                </div>
+                
+                <div class="form-group">
+                    <?php echo $this->formLabel($form->get('phone')); ?>
+                    <?php echo $this->formElement($form->get('phone')); ?>
+                    <?php echo $this->formElementErrors($form->get('phone')); ?>                  
+                </div>
+                
+        <!--         <div class="form-group"> -->
+                    <?php //echo $this->formLabel($form->get('captcha')); ?>
+                    <?php //echo $this->formElement($form->get('captcha')); ?>
+                    <?php //echo $this->formElementErrors($form->get('captcha')); ?>                  
+        <!--             <p class="help-block">Enter the letters above as you see them.</p> -->
+        <!--         </div> -->
+                
+                <?php echo $this->formElement($form->get('csrf')); ?>
+                
+                <?php echo $this->formElement($form->get('submit')); ?>
+                
+                <?php echo $this->form()->closeTag(); ?>
+            </div>    
+        </div>
+    </div>
+    <div class="col-md-3 center-block"></div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<img class="img-responsive center-block" alt="" src="/img/mapa.png">
+<br />
+<br />
+<br />
+<img class="img-responsive center-block" alt="" src="/img/fabricante3.jpg">
+<br />
+<br />
+<br />
+<br />
+<br />
+<?php
+echo $this->render('application/index/categorias');
+?>
