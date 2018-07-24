@@ -10,8 +10,9 @@ namespace Application;
 use Zend\Router\Http\Literal;
 use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
+use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 
-return [
+return [    
     'router' => [
         'routes' => [
             'home' => [
@@ -54,19 +55,41 @@ return [
                     ],
                 ],
             ],
+            'categoria' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route'    => '/categoria[/:slug]',
+                    'defaults' => [
+                        'controller' => Controller\IndexController::class,
+                        'action'     => 'categoria',
+                    ]
+                ],
+            ],
+            'producto' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route'    => '/producto[/:slug]',
+                    'defaults' => [
+                        'controller' => Controller\IndexController::class,
+                        'action'     => 'producto',
+                    ]
+                ],
+            ],
         ],
     ],
     'view_helpers' => [
         'factories' => [
             View\Helper\Menu::class => InvokableFactory::class,
+            View\Helper\Breadcrumbs::class => InvokableFactory::class,
         ],
         'aliases' => [
             'mainMenu' => View\Helper\Menu::class,
+            'pageBreadcrumbs' => View\Helper\Breadcrumbs::class,
         ]
     ],
     'controllers' => [
         'factories' => [
-            Controller\IndexController::class => InvokableFactory::class,
+            Controller\IndexController::class => Controller\Factory\IndexControllerFactory::class,
         ],
     ],
     'view_manager' => [
@@ -85,4 +108,18 @@ return [
             __DIR__ . '/../view',
         ],
     ],
+    'doctrine' => [
+        'driver' => [
+            __NAMESPACE__ . '_driver' => [
+                'class' => AnnotationDriver::class,
+                'cache' => 'array',
+                'paths' => [__DIR__ . '/../src/Entity']
+            ],
+            'orm_default' => [
+                'drivers' => [
+                    __NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver'
+                ]
+            ]
+        ]
+    ]  
 ];

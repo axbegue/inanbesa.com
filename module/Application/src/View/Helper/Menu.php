@@ -2,15 +2,16 @@
 namespace Application\View\Helper;
 
 use Zend\View\Helper\AbstractHelper;
-
 // This view helper class displays a menu bar.
 class Menu extends AbstractHelper
 {
+    
     // Menu items array.
     protected $items = [];
     
     // Active item's ID.
     protected $activeItemId = '';
+    
     
     // Constructor.
     public function __construct($items=[])
@@ -67,7 +68,8 @@ class Menu extends AbstractHelper
         if(isset($item['dropdown'])) {
             
             $dropdownItems = $item['dropdown'];
-            
+           
+
             $result .= '<li class="dropdown ' . ($isActive?'active':'') . '">';
             $result .= '<a href="#" class="dropdown-toggle" data-toggle="dropdown">';
             $result .= $label . ' <b class="caret"></b>';
@@ -78,7 +80,6 @@ class Menu extends AbstractHelper
             foreach ($dropdownItems as $item) {
                 $link = isset($item['link']) ? $item['link'] : '#';
                 $label = isset($item['label']) ? $item['label'] : '';
-                
                 $result .= '<li>';
                 $result .= '<a href="'.$link.'">'.$label.'</a>';
                 $result .= '</li>';

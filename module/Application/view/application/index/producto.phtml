@@ -1,0 +1,42 @@
+<?php 
+$category=$product->getCategory();
+$images=$product->getImages();
+$this->pageBreadcrumbs()->setItems([
+    'Home'=>$this->url('home'),
+    'Muebles para '.$category->getTitle()=>$this->url('categoria',['slug'=>$category->getSlug()]),
+    $product->getTitle()=>$this->url('categoria',['slug'=>$slug]),
+    ]);
+
+    
+?>
+
+<div class="product-details-page container">        
+    <?=$this->pageBreadcrumbs()->render() ?>
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-12">
+            <img src="<?php echo $product->getThumbnail(); ?>" class="img-responsive" />
+            <div class="row">
+                <?php foreach ($images as $image): ?>
+                    <div class="col-md-4 col-sm-4 col-12">
+                        <a href="javascript:void(0)"><img src="<?php echo $image->getUrl() ?>" class="img-responsive" /></a>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-12">
+            <h3 class="category-title">
+                muebles para
+                <span><?=$category->getTitle()?></span>   
+                <i></i>                 
+            </h3>
+            <h2 class="product-title"><?php echo $product->getTitle() ?></h2>
+            <h4 class="product-sku">CÓDIGO:<?=$product->getSku(); ?></h4>
+            <p><?php echo $product->getContent() ?></p>
+        </div>
+    </div>            
+</div>
+
+
+<?php
+echo $this->render('application/index/categorias');
+?>

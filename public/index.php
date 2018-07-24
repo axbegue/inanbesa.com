@@ -3,7 +3,8 @@
 use Zend\Mvc\Application;
 use Zend\Stdlib\ArrayUtils;
 
-ini_set('default_charset', 'iso-8859-1');
+//ini_set('default_charset', 'iso-8859-1');
+ini_set('default_charset', 'utf-8');
 date_default_timezone_set('America/Guayaquil');
 
 /**

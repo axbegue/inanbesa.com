@@ -1,0 +1,28 @@
+<?php $products=$category[0]->getProducts(); ?>
+<img class="img-responsive center-block" alt="" src="<?=$category[0]->getImage() ?>">
+<div class="container category-page">
+    <div class="row">        
+            <h2 class="category-title">
+                muebles para
+                <span><?=$category[0]->getTitle()?></span>
+                <img class="img-responsive center-block" alt="" src="/img/spacer.png">
+            </h2>
+            <div class="row gutters products-grid">
+                <?php foreach($products as $product): ?>
+                    <div class="col-md-3 col-sm-4">
+                        <a href="/producto/<?php echo $product->getSlug(); ?>">
+                            <img src="<?php echo $product->getThumbnail() ?>" class="img-responsive center-block"  alt="<?php echo $product->getTitle() ?>" />
+                        </a>
+                        <a href="/producto/<?php echo $product->getSlug(); ?>">
+                            <?=$product->getTitle() ?>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+                
+            </div>      
+    </div>
+</div>
+
+<?php
+echo $this->render('application/index/categorias');
+?>

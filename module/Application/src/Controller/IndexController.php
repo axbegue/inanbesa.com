@@ -10,9 +10,23 @@ namespace Application\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Application\Form\ContactForm;
+use Application\Entity\Category;
+use Application\Entity\Product;
 
 class IndexController extends AbstractActionController
 {
+    /**
+     * Entity manager.
+     * @var Doctrine\ORM\EntityManager 
+    */
+    private $entityManager;
+
+
+    public function __construct($entityManager) 
+    {
+        $this->entityManager = $entityManager;
+    }
+
     public function indexAction()
     {
         return new ViewModel();
@@ -22,10 +36,34 @@ class IndexController extends AbstractActionController
     {
         return new ViewModel();
     }
+
+    public function categoriaAction()
+    {
+        $categorySlug=$this->params()->fromRoute('slug');
+        $category=$this->entityManager->getRepository(Category::class)
+        ->findBy(['slug'=>$categorySlug], []);
+        
+
+        return new ViewModel(array(
+            'category' =>$category
+        ));        
+    }
+    public function productoAction()
+    {
+        $productSlug=$this->params()->fromRoute('slug');
+        $product=$this->entityManager->getRepository(Product::class)
+        ->findBy(['slug'=>$productSlug], []);
+        
+
+        return new ViewModel(array(
+            'product' =>$product[0],
+            'slug'=>$productSlug
+        ));        
+    }
     
     /**
      * This action displays the Contact Us page.
-     */
+    */
     public function contactoAction()
     {
         // Create Contact Us form
