@@ -7,19 +7,20 @@
                 <span><?=$category[0]->getTitle()?></span>
                 <img class="img-responsive center-block" alt="" src="/img/spacer.png">
             </h2>
-            <div class="row gutters products-grid">
-                <?php foreach($products as $product): ?>
-                    <div class="col-md-3 col-sm-4">
-                        <a href="/producto/<?php echo $product->getSlug(); ?>">
-                            <img src="<?php echo $product->getThumbnail() ?>" class="img-responsive center-block"  alt="<?php echo $product->getTitle() ?>" />
-                        </a>
-                        <a href="/producto/<?php echo $product->getSlug(); ?>">
-                            <?=$product->getTitle() ?>
-                        </a>
-                    </div>
-                <?php endforeach; ?>
-                
-            </div>      
+            <div class="container">
+                <div class="products-grid">
+                    <?php foreach($products as $product): ?>
+                        <div class="product-col">
+                            <a href="/producto/<?php echo $product->getSlug(); ?>">
+
+                               <div class="thumb" style="background:url(<?php echo $product->getThumbnail() ?>) bottom center no-repeat;background-size:contain"></div>
+                                <?=$product->getTitle() ?>
+                            </a>
+                        </div>
+                    <?php endforeach; ?>
+                    
+                </div>      
+            </div>
     </div>
 </div>
 
